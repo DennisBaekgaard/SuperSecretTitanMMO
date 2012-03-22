@@ -13,11 +13,36 @@ namespace TitanShooter
 {
     /// <summary>
     /// This is the main type for your game
+    /// 
     /// </summary>
+
+
+    #region TODO
+    /// 
+    /// 
+    /// ITEMS
+    /// Logikken bag reload, shootpenalty
+    /// HUD
+    /// MENU
+    /// Pathfinding
+    /// LevelUP + stats
+    /// Maps?
+    /// Kontrol af spawns
+    /// Levels
+    /// Enemystats
+    /// Achievements
+    /// NETVÆRK
+    /// Antipiracy? 
+    /// 
+     
+    #endregion
+
     public class Game1 : Microsoft.Xna.Framework.Game
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
+        public static Rectangle gameArea;
+        public static SpriteFont HUDFont;
 
         public Game1()
         {
@@ -35,6 +60,9 @@ namespace TitanShooter
         {
             // TODO: Add your initialization logic here
 
+            Ressources.Initialize();
+            gameArea = new Rectangle(0, 0, graphics.PreferredBackBufferWidth, graphics.PreferredBackBufferHeight);
+
             base.Initialize();
         }
 
@@ -46,6 +74,13 @@ namespace TitanShooter
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
+            HUDFont = Content.Load<SpriteFont>("fonts\\HUDFont");
+
+            foreach (Entity entity in Ressources.objectsList)
+            {
+                entity.LoadContent(this.Content);
+            }
+
 
             // TODO: use this.Content to load your game content here
         }
@@ -70,7 +105,10 @@ namespace TitanShooter
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
                 this.Exit();
 
-            // TODO: Add your update logic here
+            foreach (Entity entity in Ressources.objectsList)
+            {
+                entity.Update();
+            }
 
             base.Update(gameTime);
         }
@@ -83,7 +121,12 @@ namespace TitanShooter
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
-            // TODO: Add your drawing code here
+            spriteBatch.Begin();
+            foreach (Entity entity in Ressources.objectsList)
+            {
+                entity.Draw(spriteBatch);
+            }
+            spriteBatch.End();
 
             base.Draw(gameTime);
         }
