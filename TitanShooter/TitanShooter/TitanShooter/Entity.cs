@@ -100,6 +100,7 @@ namespace TitanShooter
             }
         }
 
+        //mikkel What does this function really do?
         public Entity Collision(Entity entity)
         {
             foreach (Entity ent in Ressources.objectsList)
