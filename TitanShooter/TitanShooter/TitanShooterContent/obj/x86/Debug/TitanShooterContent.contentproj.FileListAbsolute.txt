@@ -1,2 +1,0 @@
-C:\Users\Stefan\SuperSecretTitanMMO\SuperSecretTitanMMO\TitanShooter\TitanShooter\TitanShooterContent\obj\x86\Debug\ResolveAssemblyReference.cache
-C:\Documents and Settings\DeadDog\My Documents\Visual Studio 2010\Projects\TitanShooter\TitanShooter\TitanShooterContent\obj\x86\Debug\ResolveAssemblyReference.cache
