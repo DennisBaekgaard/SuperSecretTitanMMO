@@ -82,5 +82,10 @@ namespace TitanShooter
 
             return res;
         }
+
+        public override bool Collideable
+        {
+            get { return true; }
+        }
     }
 }

@@ -22,7 +22,7 @@ namespace TitanShooter
         public float scale = 1.0f;
         public bool alive = true;
         public Rectangle area;
- 
+
 
         public Entity(Vector2 pos)
         {
@@ -34,8 +34,8 @@ namespace TitanShooter
         public virtual void Update()
         {
             if (!alive) return;
-                    
-            
+
+
             UpdateArea();
 
             PushTo(speed, rotation);
@@ -100,19 +100,23 @@ namespace TitanShooter
             }
         }
 
+        public abstract bool Collideable
+        {
+            get;
+        }
+
         //mikkel What does this function really do?
-        public Entity Collision(Entity entity)
+        public Entity Collision()
         {
             foreach (Entity ent in Ressources.objectsList)
             {
-                if (ent.GetType() == entity.GetType())
-                    if (ent.area.Intersects(area) )
-                        return ent;
+                if (ent.Collideable && ent.area.Intersects(area))
+                    return ent;
             }
-            return new Enemy(new Vector2(-50, -50));
+            return null;
         }
 
-        
+
     }
 }
 

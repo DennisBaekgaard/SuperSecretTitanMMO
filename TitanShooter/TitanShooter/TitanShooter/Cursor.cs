@@ -37,5 +37,10 @@ namespace TitanShooter
             base.Update();
         }
 
+
+        public override bool Collideable
+        {
+            get { return false; }
+        }
     }
 }

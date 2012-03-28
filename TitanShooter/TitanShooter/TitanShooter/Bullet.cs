@@ -29,9 +29,9 @@ namespace TitanShooter
             if (position.X < 0 || position.Y < 0 || position.X > Game1.gameArea.Width || position.Y > Game1.gameArea.Height) 
                 alive = false;
 
-            Entity targetEnemy = Collision(new Enemy(new Vector2(0, 0)));
+            Entity targetEnemy = Collision();
 
-            if (targetEnemy.GetType() == typeof(Enemy) && targetEnemy.position.X != -50 && targetEnemy.position.Y != -50 && targetEnemy.alive == true)
+            if (targetEnemy != null && targetEnemy is Enemy && targetEnemy.alive == true)
             {
                 (targetEnemy as Enemy).Damage(1);
                 alive = false;

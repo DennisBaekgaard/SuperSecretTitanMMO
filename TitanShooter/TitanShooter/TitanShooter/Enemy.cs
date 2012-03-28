@@ -55,5 +55,10 @@ namespace TitanShooter
 
 
 
+
+        public override bool Collideable
+        {
+            get { return true; }
+        }
     }
 }

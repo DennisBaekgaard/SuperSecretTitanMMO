@@ -18,5 +18,10 @@ namespace TitanShooter
 
         public int AliveTimer = 600;
         public int AliveTime;
+
+        public override bool Collideable
+        {
+            get { return false; }
+        }
     }
 }
