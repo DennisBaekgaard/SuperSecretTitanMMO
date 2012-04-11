@@ -37,11 +37,7 @@ namespace TitanShooter
         //husk kontroller værdier!
 
         public int Damage;
-        
-
-        private int myVar;
-
-        
+              
         
     }
 }
