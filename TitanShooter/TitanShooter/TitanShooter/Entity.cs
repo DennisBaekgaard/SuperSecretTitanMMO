@@ -12,33 +12,44 @@ using Microsoft.Xna.Framework.Media;
 
 namespace TitanShooter
 {
-    public abstract class Entity : DrawableComponent
+    public abstract class Entity : IDrawableComponentProperties
     {
-        public Vector2 position;
-        public float rotation = 0.0f;
-        public Texture2D spriteIndex;
-        public string spriteName = "nosprite";
-        public float speed = 0.0f;
-        public float scale = 1.0f;
-        public bool alive = true;
-        public Rectangle area;
- 
+
+        private Vector2 position;
+        private float rotation;
+        private Texture2D spriteIndex;
+        private string spriteName;
+        private float speed;
+        private float scale = 1;
+        private bool alive = true;
+        private Rectangle area;
+
+
+        public Vector2 Position { get { return position; } set { position = value; } }
+        public float Rotation { get { return rotation; } set { rotation = value; } }
+        public Texture2D SpriteIndex { get { return spriteIndex; } set { spriteIndex = value; } }
+        public string SpriteName { get { return spriteName; } set { spriteName = value; } }
+        public float Speed { get { return speed; } set { speed = value; } }
+        public float Scale { get { return scale; } set { scale = value; } }
+        public bool Alive { get { return alive; } set { alive = value; } }
+        public Rectangle Area { get { return area; } set { area = value; } }
+
 
         public Entity(Vector2 pos)
         {
-            position = pos;
+            Position = pos;
         }
 
         public Entity() { }
 
         public virtual void Update()
         {
-            if (!alive) return;
+            if (!Alive) return;
+            
 
+            this.UpdateArea();
 
-            UpdateArea();
-
-            PushTo(speed, rotation);
+            this.PushTo(Speed, Rotation);
         }
 
         public void Shoot(Vector2 mousePos, int bulletSpeed)
@@ -46,21 +57,21 @@ namespace TitanShooter
 
             foreach (Entity entity in Ressources.objectsList)
             {
-                if (entity.GetType() == typeof(Bullet) && !(entity.alive))
+                if (entity.GetType() == typeof(Bullet) && !(entity.Alive))
                 {
-                    entity.position = position;
-                    entity.rotation = rotation;
-                    entity.speed = bulletSpeed;
-                    entity.alive = true;
+                    entity.Position = Position;
+                    entity.Rotation = Rotation;
+                    entity.Speed = bulletSpeed;
+                    entity.Alive = true;
                     entity.UpdateArea();
                     break;
                 }
             }
         }
 
-        
 
-        
+
+
     }
 }
 

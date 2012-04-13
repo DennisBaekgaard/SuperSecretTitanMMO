@@ -12,12 +12,14 @@ using Microsoft.Xna.Framework.Media;
 
 namespace TitanShooter
 {
-    class Player : Entity
+    class Player : Entity, IDrawableComponentProperties
     {
         KeyboardState keyboard;
         MouseState mouse;
+        
+        
 
-        Weapon EqippedWeapon;
+        //Weapon EqippedWeapon;
 
         float spd = 2;
 
@@ -27,10 +29,13 @@ namespace TitanShooter
             : base(pos)
         {
 
-            spriteName = "player";
+            SpriteName = "player";
+            Position = new Vector2(20, 20);
             player = this;
 
         }
+
+       
 
         public override void Update()
         {
@@ -41,20 +46,21 @@ namespace TitanShooter
             //Movements
             if (keyboard.IsKeyDown(Keys.W))
             {
-                position.Y -= spd;
+                
+                Position = new Vector2(Position.X, Position.Y - spd);
             }
             if (keyboard.IsKeyDown(Keys.A))
             {
-                position.X -= spd;
+                Position = new Vector2(Position.X - spd, Position.Y);
             }
             if (keyboard.IsKeyDown(Keys.S))
             {
-                position.Y += spd;
+                Position = new Vector2(Position.X, Position.Y + spd);
             }
 
             if (keyboard.IsKeyDown(Keys.D))
             {
-                position.X += spd;
+                Position = new Vector2(Position.X +spd, Position.Y);
             }
 
             //shoot
@@ -63,7 +69,7 @@ namespace TitanShooter
                 Shoot(Cursor.cursorPosition, 10 );
             }
 
-            rotation = PointDirection(position.X, position.Y, mouse.X, mouse.Y);
+            Rotation = PointDirection(Position.X, Position.Y, mouse.X, mouse.Y);
             base.Update();
 
         }
@@ -83,9 +89,6 @@ namespace TitanShooter
             return res;
         }
 
-        public override bool Collideable
-        {
-            get { return true; }
-        }
+
     }
 }

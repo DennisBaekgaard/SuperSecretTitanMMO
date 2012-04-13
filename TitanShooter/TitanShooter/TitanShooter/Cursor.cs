@@ -23,24 +23,21 @@ namespace TitanShooter
         public Cursor(Vector2 pos)
             : base(pos)
         {
-            position = pos;
-            spriteName = "crosshair";
+            Position = pos;
+            SpriteName = "crosshair";
         }
 
         public override void Update()
         {
             mouse = Mouse.GetState();
 
-            position = new Vector2(mouse.X, mouse.Y);
-            cursorPosition = position;
+            Position = new Vector2(mouse.X, mouse.Y);
+            cursorPosition = Position;
 
             base.Update();
         }
 
 
-        public override bool Collideable
-        {
-            get { return false; }
-        }
+        
     }
 }

@@ -22,23 +22,23 @@ namespace TitanShooter
         public Enemy(Vector2 pos)
             : base(pos)
         {
-            position = pos;
-            spriteName = "enemy";
-            speed = spd;
+            Position = pos;
+            SpriteName = "enemy";
+            Speed = spd;
             health = maxHealth;
         }
 
         private void MoveToDest()
         {
-            dest = Player.player.position;
-            rotation = PointDirection(Player.player.position);
+            dest = Player.player.Position;
+            Rotation = this.PointDirection(Player.player.Position);
         }
 
         public override void Update()
         {
             if (health <= 0)
             {
-                alive = false;
+                Alive = false;
                 
                 health = maxHealth;
                 return;
@@ -56,9 +56,6 @@ namespace TitanShooter
 
 
 
-        public override bool Collideable
-        {
-            get { return true; }
-        }
+
     }
 }

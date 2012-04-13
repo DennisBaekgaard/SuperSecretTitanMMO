@@ -12,29 +12,29 @@ using Microsoft.Xna.Framework.Media;
 
 namespace TitanShooter
 {
-    class Bullet : Item
+    class Bullet : Item, IDrawableComponentProperties
     {
         public Bullet(Vector2 pos)
             : base(pos)
         {
 
-            spriteName = "bullet";
+            SpriteName = "bullet";
 
         }
 
         public override void Update()
         {
-            if (!alive) return;
+            if (!Alive) return;
 
-            if (position.X < 0 || position.Y < 0 || position.X > Game1.gameArea.Width || position.Y > Game1.gameArea.Height) 
-                alive = false;
+            if (Position.X < 0 || Position.Y < 0 || Position.X > Game1.gameArea.Width || Position.Y > Game1.gameArea.Height) 
+                Alive = false;
 
-            Entity targetEnemy = Collision();
+            Entity targetEnemy = this.Collision(this);
 
-            if (targetEnemy != null && targetEnemy is Enemy && targetEnemy.alive == true)
+            if (targetEnemy != null && targetEnemy is Enemy && targetEnemy.Alive == true)
             {
                 (targetEnemy as Enemy).Damage(1);
-                alive = false;
+                Alive = false;
             }
                      
             base.Update();

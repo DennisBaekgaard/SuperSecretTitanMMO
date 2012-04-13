@@ -24,7 +24,7 @@ namespace TitanShooter
             //Add bullets
               for (int i = 0; i < 64; i++) {
                   Entity entity= new Bullet(new Vector2(0, 0));
-                  entity.alive = false;
+                  entity.Alive = false;
                   objectsList.Add(entity);
               }
             /*
@@ -45,7 +45,7 @@ namespace TitanShooter
             foreach (Entity entity in objectsList)
             {
 
-                entity.alive = false;
+                entity.Alive = false;
             }
 
         }
