@@ -14,6 +14,6 @@ namespace TitanShooter
 {
     interface IPosition
     {
-        Vector2 Position { get; set; }
+        Vector2 Position { get; }
     }
 }
