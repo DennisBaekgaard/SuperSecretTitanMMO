@@ -47,6 +47,7 @@ namespace TitanShooter
         {
             foreach (var v in bullets)
             {
+                // Do something that calculates the new position...
             }
         }
 
