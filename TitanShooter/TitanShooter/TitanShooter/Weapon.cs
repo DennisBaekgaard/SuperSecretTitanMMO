@@ -24,7 +24,7 @@ namespace TitanShooter
         public int MaxClips;
 
         public int ReloadTimer;
-        public int ReloadTime; 
+        public int ReloadTime;
 
         public int ShootDelay;
         public int ShootDelayCnt;
