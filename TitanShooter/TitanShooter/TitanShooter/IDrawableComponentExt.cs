@@ -16,6 +16,8 @@ namespace TitanShooter
     {
 
         
+
+        
         public static void UpdateArea(this IDrawableComponentProperties component)
         {
             component.Area = new Rectangle((int)component.Position.X - (component.SpriteIndex.Width / 2), (int)component.Position.Y - (component.SpriteIndex.Height / 2), component.Area.Width, component.Area.Height);
