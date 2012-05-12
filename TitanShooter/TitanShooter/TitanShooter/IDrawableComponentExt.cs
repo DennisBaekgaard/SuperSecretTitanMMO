@@ -22,8 +22,6 @@ namespace TitanShooter
             
         }
 
-
-
         public static void LoadContent(this IDrawableComponentProperties component, ContentManager content)
         {
             component.SpriteIndex = content.Load<Texture2D>("sprites\\" + component.SpriteName);

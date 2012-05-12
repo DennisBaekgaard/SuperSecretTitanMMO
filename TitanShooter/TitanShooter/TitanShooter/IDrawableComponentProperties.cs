@@ -14,8 +14,6 @@ namespace TitanShooter
 {
     interface IDrawableComponentProperties
     {
-        Vector2 Position {get; set;}
-        float Rotation { get; set; }
         Texture2D SpriteIndex { get; set; }
         string SpriteName { get; set; }
         float Speed { get; set; }
