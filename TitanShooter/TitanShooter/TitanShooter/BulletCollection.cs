@@ -14,6 +14,7 @@ namespace TitanShooter
 {
     public class BulletCollection : DrawableGameComponent
     {
+        private SpriteBatch spriteBatch;
         private Texture2D texture;
 
         private List<Info> bullets;
@@ -38,6 +39,7 @@ namespace TitanShooter
 
         protected override void LoadContent()
         {
+            this.spriteBatch = new SpriteBatch(Game.GraphicsDevice);
             texture = Game.Content.Load<Texture2D>("bullet");
         }
 
@@ -50,9 +52,14 @@ namespace TitanShooter
 
         public override void Draw(GameTime gameTime)
         {
+            Vector2 center = new Vector2(texture.Width / 2, texture.Height / 2);
+            spriteBatch.Begin();
             foreach (var v in bullets)
             {
+                spriteBatch.Draw(texture, v.Position, null, Color.White, 
+                    MathHelper.ToRadians(v.Direction), center, 1, SpriteEffects.None, 0);
             }
+            spriteBatch.End();
         }
     }
 }
