@@ -109,7 +109,6 @@
   <ItemGroup>
     <Compile Include="Bullet.cs" />
     <Compile Include="BulletCollection.cs" />
-    <Compile Include="Comitified.cs" />
     <Compile Include="Cursor.cs" />
     <Compile Include="Enemy.cs" />
     <Compile Include="IDrawableComponentExt.cs" />
