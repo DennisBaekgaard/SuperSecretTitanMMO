@@ -31,7 +31,7 @@ namespace TitanShooter
 
         public int Weight;
 
-        public int LevelReq;
+        public int LevelReq;s
         public double Multiplier;
         public int ItemLevel { get { return ItemLevel; } set { ItemLevel = (int)Math.Round((double)LevelReq * Multiplier, MidpointRounding.AwayFromZero); } }
         //husk kontroller værdier!
