@@ -17,9 +17,9 @@ namespace TitanShooter
         private SpriteBatch spriteBatch;
         private Texture2D texture;
 
-        private List<Info> bullets;
+        private List<Bullet> bullets;
 
-        private class Info
+        private class Bullet
         {
             public Vector2 Position;
             public float Direction;
@@ -29,12 +29,12 @@ namespace TitanShooter
         public BulletCollection(Game1 game)
             : base(game)
         {
-            this.bullets = new List<Info>();
+            this.bullets = new List<Bullet>();
         }
 
         public void Add(Vector2 position, float direction, float speed)
         {
-            this.bullets.Add(new Info() { Position = position, Direction = direction, Speed = speed });
+            this.bullets.Add(new Bullet() { Position = position, Direction = direction, Speed = speed });
         }
 
         protected override void LoadContent()
