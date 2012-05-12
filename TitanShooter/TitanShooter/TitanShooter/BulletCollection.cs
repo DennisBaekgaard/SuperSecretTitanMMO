@@ -33,13 +33,13 @@ namespace TitanShooter
             this.bullets = new List<Bullet>();
         }
 
-        public void Add(Weapon weapon, Vector2 position, float direction, float speed)
+        public void Add(Weapon weapon, Vector2 position, float direction)
         {
             Texture2D texture;
             if (!this.textures.ContainsKey(weapon))
                 this.textures.Add(weapon, weapon.LoadTexture(this.Game.Content));
             texture = textures[weapon];
-            this.bullets.Add(new Bullet() { Position = position, Direction = direction, Speed = speed, Texture = texture });
+            this.bullets.Add(new Bullet() { Position = position, Direction = direction, Speed = weapon.BulletSpeed, Texture = texture });
         }
 
         protected override void LoadContent()

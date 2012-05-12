@@ -42,5 +42,10 @@ namespace TitanShooter
         {
             return Content.Load<Texture2D>("bullet");
         }
+
+        public float BulletSpeed
+        {
+            get { return 15; }
+        }
     }
 }
