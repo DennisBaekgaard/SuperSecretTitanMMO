@@ -43,7 +43,9 @@ namespace TitanShooter
 
         public override void Update(GameTime gameTime)
         {
-            base.Update(gameTime);
+            foreach (var v in bullets)
+            {
+            }
         }
 
         public override void Draw(GameTime gameTime)
