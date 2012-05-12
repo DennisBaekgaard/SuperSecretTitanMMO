@@ -7,6 +7,6 @@ namespace TitanShooter
 {
     public interface IWeapon
     {
-        
+        public int secret;
     }
 }
