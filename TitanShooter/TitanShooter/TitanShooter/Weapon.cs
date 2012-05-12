@@ -41,7 +41,6 @@ namespace TitanShooter
         public Texture2D LoadTexture(ContentManager Content)
         {
             return Content.Load<Texture2D>("bullet");
-
         }
 
         public float BulletSpeed
