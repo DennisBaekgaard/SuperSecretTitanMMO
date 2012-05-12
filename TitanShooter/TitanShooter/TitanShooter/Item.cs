@@ -12,7 +12,7 @@ using Microsoft.Xna.Framework.Media;
 
 namespace TitanShooter
 {
-    class Item : Entity
+    public class Item : Entity
     {
         public Item(Vector2 pos) : base(pos) { }
 
