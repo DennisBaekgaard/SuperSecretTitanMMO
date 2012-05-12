@@ -12,7 +12,7 @@ using Microsoft.Xna.Framework.Media;
 
 namespace TitanShooter
 {
-    class Weapon : Item
+    public class Weapon : Item
     {
         public Weapon(Vector2 pos) : base(pos) { }
 
@@ -37,7 +37,10 @@ namespace TitanShooter
         //husk kontroller værdier!
 
         public int Damage;
-              
-        
+
+        public Texture2D LoadTexture(ContentManager Content)
+        {
+            return Content.Load<Texture2D>("bullet");
+        }
     }
 }
