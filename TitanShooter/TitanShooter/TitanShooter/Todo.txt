@@ -1,0 +1,5 @@
+﻿Vi skal have følgende ting i den første simple udgave:
+Player
+Enemy
+Weapon
+Bullet
