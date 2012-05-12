@@ -115,6 +115,7 @@
     <Compile Include="IDrawableComponentProperties.cs" />
     <Compile Include="IPosition.cs" />
     <Compile Include="Item.cs" />
+    <Compile Include="IWeapon.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Entity.cs" />
     <Compile Include="Ressources.cs" />

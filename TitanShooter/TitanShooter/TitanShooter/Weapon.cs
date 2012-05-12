@@ -38,14 +38,11 @@ namespace TitanShooter
 
         public int Damage;
 
-        public Texture2D LoadTexture(ContentManager Content)
-        {
-            return Content.Load<Texture2D>("bullet");
-        }
+        private Texture2D bulletTexture;
 
-        public float BulletSpeed
+        public Bullet CreateBullet(Vector2 position, float direction)
         {
-            get { return 15; }
+            return new Bullet(bulletTexture, position, direction, 15);
         }
     }
 }
